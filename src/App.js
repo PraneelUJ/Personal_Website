@@ -1,25 +1,88 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useNavigate,
+} from "react-router-dom";
 
-function App() {
+import { Button, Alert } from "react-bootstrap";
+import { useState } from "react";
+import LandingPage from "./pages/Landingpage.jsx";
+import Aboutme from "./pages/Aboutme.jsx";
+import Projects from "./pages/Projects.jsx";
+// Example LandingPage component
+
+// Component that uses useNavigate + Routes + Link
+function AppRouter() {
+  const navigate = useNavigate();
+  function MouseOver(event) {
+    event.target.style.background = "yellow";
+  }
+  function MouseOut(event) {
+    event.target.style.background = "";
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div>
+      <nav
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "10px 20px",
+        }}
+      >
+        <Link
+          to="/"
+          style={{
+            color: "blueviolet",
+            fontFamily: "cursive",
+            fontSize: 50,
+            marginLeft: "20px",
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          Praneel
+        </Link>
+        <div>
+          <Link
+            to="/aboutme"
+            style={{
+              color: "blueviolet",
+              fontFamily: "cursive",
+              fontSize: 30,
+              textAlign: "right",
+              marginRight: "20px",
+            }}
+            onMouseOver={MouseOver}
+            onMouseOut={MouseOut}
+          >
+            About Me {" "}
+          </Link>
+          <Link
+            to="/projects"
+            style={{ color: "blueviolet", fontFamily: "cursive", fontSize: 30 }}
+            onMouseOver={MouseOver}
+            onMouseOut={MouseOut}
+          >
+            Projects
+          </Link>
+        </div>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/aboutme" element={<Aboutme />} />
+        <Route path="/projects" element={<Projects />} />
+      </Routes>
     </div>
   );
 }
 
-export default App;
+// Main App wrapped with Router
+export default function App() {
+  return (
+    <Router>
+      <AppRouter />
+    </Router>
+  );
+}

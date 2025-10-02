@@ -1,0 +1,9 @@
+body {
+  margin: 0;  /* remove default margin */
+  height: 100vh;
+  background-image: url("images.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 50px;
+}
