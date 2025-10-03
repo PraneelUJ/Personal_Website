@@ -51,7 +51,7 @@ function AppRouter() {
               fontFamily: "cursive",
               fontSize: 30,
               textAlign: "right",
-              marginRight: "20px",
+              marginRight: "200px",
             }}
             onMouseOver={MouseOver}
             onMouseOut={MouseOut}

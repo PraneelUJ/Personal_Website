@@ -2,14 +2,31 @@ import React from "react";
 import Typewriter from "typewriter-effect";
 import "./styles.css";
 import { Button, Alert } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 export default function Landingpage() {
+  function MouseOver(event) {
+    event.target.style.background = "yellow";
+    event.target.style.color = "black";
+    event.target.style.fontWeight = "bold";
+    event.target.style.fontFamily="Michroma";
+    event.target.style.transform= "scale(1.2)";
+    event.target.style.boxShadow= "0 8px 20px rgba(0, 255, 255, 0.8)";
+  }
+  function MouseOut(event) {
+    event.target.style.background = "black";
+    event.target.style.fontFamily="fascinate";
+    event.target.style.color="white";
+    event.target.style.transform= "scale(1)";
+    event.target.style.boxShadow="none"  ;
+  }
+  const navigate = useNavigate();
   return (
     <>
       <div
         style={{
           fontSize: "50px",
-          fontFamily: "cursive",
+          fontFamily: "fascinate",
           textAlign: "center",
           marginTop: "200px",
           background: "linear-gradient(90deg, #ffea00, #00ff87)",
@@ -44,9 +61,9 @@ export default function Landingpage() {
         </style>
       </div>
       <div
-      style={{
+        style={{
           fontSize: "50px",
-          fontFamily: "cursive",
+          fontFamily: "Michroma",
           textAlign: "center",
           marginTop: "200px",
           background: "linear-gradient(90deg, #ffea00, #00ff87)",
@@ -55,10 +72,45 @@ export default function Landingpage() {
           color: "transparent",
           animation: "shine 4s linear infinite, fadeIn 2s ease-in-out forwards",
           opacity: 0,
-        }}>
-        <Button>Clickme</Button> <Button>Clickme</Button>
+        }}
+      >
+        <Button
+          style={{
+            fontSize: "30px",
+            margin: "30px",
+            fontFamily: "fascinate",
+            backgroundColor: "black",
+            color: "white",
+            borderRadius: "20px",
+            borderColor: "orange",
+            borderWidth: "5px",
+            transition:"transform 0.3s ease"
+          }}
+          onMouseOver={MouseOver}
+          onMouseOut={MouseOut} 
+          onClick={() => navigate("/aboutme")}
+        >
+          Know Me
+        </Button>
+        <Button
+          style={{
+            fontSize: "30px",
+            marginLeft: "30px",
+            fontFamily: "fascinate",
+            backgroundColor: "black",
+            color: "white",
+            borderRadius: "20px",
+            borderColor: "orange",
+            borderWidth: "5px",
+            transition:"transform 0.3s ease",
+          }}
+          onMouseOver={MouseOver}
+          onMouseOut={MouseOut}
+          onClick={() => window.open("https://drive.google.com/file/d/1cpKdKQ2vFdHtaNPIVdfJSD7O9LIwB-XO/view?usp=sharing")}
+        >
+          My Resume
+        </Button>
       </div>
-      
     </>
   );
 }
