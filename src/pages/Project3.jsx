@@ -1,9 +1,9 @@
 import React from "react";
-import project1 from "./project1.png";
+import project3 from "./project3.png";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-export default function Projects() {
+export default function Project3() {
   function MouseOver(event) {
     event.target.style.transform = "scale(1.2)";
     event.target.style.boxShadow = "0 8px 20px #ADD8E6";
@@ -41,7 +41,7 @@ export default function Projects() {
       <img
         style={{
           height: "400px",
-          width: "400px",
+          width: "300px",
           marginLeft: "300px",
           marginTop: "100px",
           transition: "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
@@ -52,7 +52,7 @@ export default function Projects() {
         }}
         onMouseOver={MouseOver}
         onMouseOut={MouseOut}
-        src={project1}
+        src={project3}
         alt="Praneel"
       />
 
@@ -74,11 +74,12 @@ export default function Projects() {
         }}
       >
         <h2 style={{ marginTop: 0, marginBottom: "15px", color: "#ADD8E6" }}>
-          IITGN Merch Website
+          WebApp for Electoral Bond Transparency
         </h2>
-        Built a React-based portal for IIT Gandhinagar that centralizes club
-        merchandise, supports easy browsing and purchases, and provides admins
-        with inventory management and customers with order tracking.
+        Built a Flask-based platform to analyze electoral bond data (2019–2024)
+        with tables and visualizations. Users can track donations by companies
+        and parties, view funding distributions, and gain transparent,
+        data-driven insights.
         <div style={{ marginTop: "30px", textAlign: "center" }}>
           <Button
             style={{
@@ -94,7 +95,7 @@ export default function Projects() {
             }}
             onMouseOver={MouseOver1}
             onMouseOut={MouseOut1}
-            onClick={() => navigate("/project3")}
+            onClick={() => navigate("/project2")}
           >
             Previous
           </Button>
@@ -112,7 +113,7 @@ export default function Projects() {
             }}
             onMouseOver={MouseOver1}
             onMouseOut={MouseOut1}
-            onClick={() => navigate("/project2")}
+            onClick={() => navigate("/projects")}
           >
             Next
           </Button>

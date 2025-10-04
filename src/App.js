@@ -11,6 +11,9 @@ import { useState } from "react";
 import LandingPage from "./pages/Landingpage.jsx";
 import Aboutme from "./pages/Aboutme.jsx";
 import Projects from "./pages/Projects.jsx";
+import Project2 from "./pages/Project2.jsx";
+import Project3 from "./pages/Project3.jsx";
+import Extra from "./pages/Extra.jsx";
 // Example LandingPage component
 
 // Component that uses useNavigate + Routes + Link
@@ -56,7 +59,7 @@ function AppRouter() {
             onMouseOver={MouseOver}
             onMouseOut={MouseOut}
           >
-            About Me {" "}
+            About Me{" "}
           </Link>
           <Link
             to="/projects"
@@ -73,6 +76,9 @@ function AppRouter() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/aboutme" element={<Aboutme />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/extracurricular" element={<Extra />} />
+        <Route path="/project2" element={<Project2 />} />
+        <Route path="/project3" element={<Project3 />} />
       </Routes>
     </div>
   );
