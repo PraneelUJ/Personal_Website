@@ -59,7 +59,7 @@ function AppRouter() {
             onMouseOver={MouseOver}
             onMouseOut={MouseOut}
           >
-            About Me{" "}
+            Know Me{" "}
           </Link>
           <Link
             to="/projects"
