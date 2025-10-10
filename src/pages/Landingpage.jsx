@@ -1,5 +1,6 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
+import TextType from "./TextType";
 import "./styles.css";
 import { Button, Alert } from "react-bootstrap";
 import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
@@ -38,13 +39,14 @@ export default function Landingpage() {
           opacity: 0,
         }}
       >
-        <Typewriter
-          options={{
-            autoStart: true,
-            loop: true,
-            delay: 45,
-            strings: ["Hi, I am Praneel Joshi !!!"],
-          }}
+        <TextType
+          text={["Hello There! 👋", "I'm Praneel Joshi"]}
+        typingSpeed={75}
+          deletingSpeed={50}
+          initialDelay={500}
+          pauseDuration={1500}
+          showCursor={true}
+          cursorCharacter="|"
         />
 
         {/* Inline <style> for keyframes since we're not using CSS file */}
@@ -160,9 +162,7 @@ export default function Landingpage() {
             e.target.style.boxShadow = "none";
           }}
           onClick={() =>
-            window.open(
-              "https://www.linkedin.com/in/praneel-joshi-898954319/"
-            )
+            window.open("https://www.linkedin.com/in/praneel-joshi-898954319/")
           }
         />
         <FaGithub
@@ -181,11 +181,7 @@ export default function Landingpage() {
             e.target.style.transform = "scale(1)";
             e.target.style.boxShadow = "none";
           }}
-          onClick={() =>
-            window.open(
-              "https://github.com/PraneelUJ"
-            )
-          }
+          onClick={() => window.open("https://github.com/PraneelUJ")}
         />
       </div>
     </>

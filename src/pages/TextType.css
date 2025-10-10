@@ -1,0 +1,74 @@
+.text-type {
+  display: inline-block;
+  white-space: pre-wrap;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff6b6b, #f8e71c, #6bffb8, #61dafb, #a66bff);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 5s ease infinite;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Smooth gradient animation */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Cursor styling */
+.text-type__cursor {
+  margin-left: 0.25rem;
+  display: inline-block;
+  opacity: 1;
+  font-weight: bold;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+  animation: blink 1s infinite, colorShift 3s linear infinite;
+}
+
+/* Blink animation for cursor */
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+/* Cursor color shifting (cyan → pink → yellow → cyan) */
+@keyframes colorShift {
+  0% {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+  }
+  25% {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+  }
+  50% {
+    color: #ffff00;
+    text-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00;
+  }
+  75% {
+    color: #ff6600;
+    text-shadow: 0 0 10px #ff6600, 0 0 20px #ff6600;
+  }
+  100% {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+  }
+}
+
+/* Hidden cursor class */
+.text-type__cursor--hidden {
+  display: none;
+}
